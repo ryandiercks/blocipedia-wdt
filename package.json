@@ -1,0 +1,51 @@
+{
+  "name": "Blocipedia",
+  "version": "1.0.0",
+  "description": "An app that lets users create wikis and share them publicly or privately with other collaborators.",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "export NODE_ENV=test && jasmine",
+    "start": "node src/server.js",
+    "pg-info": "pgc info pg96",
+    "pg-restart": "pgc restart pg96",
+    "sq-mg": "sequelize db:migrate && sequelize db:migrate --env test",
+    "sq-mginfo": "sequelize db:migrate:status && sequelize db:migrate:status --env test",
+    "sq-mgundo": "sequelize db:migrate:undo:all && sequelize db:migrate:undo:all --env test",
+    "sq-mgredo": "npm run sq-mgundo && npm run sq-migrate",
+    "sq-sd": "sequelize db:seed:all",
+    "sq-sdundo": "sequelize db:seed:undo:all",
+    "sq-sdredo": "npm run sq-sdundo && npm run sq-seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryandiercks/blocipedia-wdt.git"
+  },
+  "author": "Ryan Diercks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryandiercks/blocipedia-wdt/issues"
+  },
+  "homepage": "https://github.com/ryandiercks/blocipedia-wdt#readme",
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jasmine": "^3.3.1",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.41.2",
+    "sequelize-cli": "^5.4.0"
+  }
+}
